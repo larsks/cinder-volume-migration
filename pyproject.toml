@@ -1,0 +1,21 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "cinder_migrate"
+authors = [{name = "Lars Kellogg-Stedman", email = "lars@redhat.com"}]
+license = {file = "LICENSE"}
+classifiers = ["License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)"]
+dynamic = ["version", "description"]
+dependencies = [
+	'click',
+	'python-openstacksdk',
+	'pydantic',
+]
+
+[project.urls]
+Home = "https://github.com/larsks/cinder_migrate"
+
+[project.scripts]
+cinder-migrate = 'cinder_migrate.main:main'
